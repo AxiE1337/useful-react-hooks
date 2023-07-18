@@ -14,6 +14,10 @@
     "name": "Alexey Skvortsov",
     "email": "pixell390@gmail.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AxiE1337/useful-react-hooks"
+  },
   "keywords": [
     "react-hooks"
   ],
