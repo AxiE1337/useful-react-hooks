@@ -95,13 +95,15 @@ export default App
 
 ### Syntax
 
-#### The useIntersection takes three parameters: root, rootMargin, threshold
+#### The useIntersection takes three parameters: root, rootMargin, threshold, once
 
 #### root (optional): The element that is used as the viewport for checking the target's intersection.
 
 #### rootMargin (optional): Margin around the root element.
 
 #### threshold (optional): A number or an array of numbers indicating at what percentage of the target's #### visibility the observer's callback should be executed.
+
+#### once (optional, default: false): A boolean indicating whether to observe once
 
 ### Example
 

@@ -1,6 +1,6 @@
 {
   "name": "useful-custom-react-hooks",
-  "version": "1.0.1",
+  "version": "1.0.21",
   "description": "A bunch of useful react hooks",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
