@@ -71,18 +71,25 @@ export default App
 import { useStorage } from 'useful-custom-react-hooks'
 
 function App() {
-  const [data, setData] = useStorage('myData')
+  const [data, setData] = useStorage < { message: string } > 'myData'
 
   const handleSetData = () => {
     setData({
       message: 'hello world',
     })
   }
+  const handleDelete = () => {
+    // to delete localStorage item just set it to null
+    setData(null)
+  }
+
   console.log(data) // {message: 'hello world'}
 
   return (
     <main>
       <button onClick={handleSetData}>set data</button>
+      <button onClick={handleDelete}>delete</button>
+      <h1>{data?.message}</h1>
     </main>
   )
 }
@@ -101,7 +108,7 @@ export default App
 
 #### rootMargin (optional): Margin around the root element.
 
-#### threshold (optional): A number or an array of numbers indicating at what percentage of the target's #### visibility the observer's callback should be executed.
+#### threshold (optional): A number or an array of numbers indicating at what percentage of the target's visibility the observer's callback should be executed.
 
 #### once (optional, default: false): A boolean indicating whether to observe once
 
