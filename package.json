@@ -1,7 +1,7 @@
 {
   "name": "useful-custom-react-hooks",
   "version": "1.0.3",
-  "description": "A bunch of useful react hooks",
+  "description": "A collection of useful custom React hooks to simplify common tasks and enhance your React applications.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -19,8 +19,18 @@
     "url": "https://github.com/AxiE1337/useful-react-hooks"
   },
   "keywords": [
-    "react-hooks"
+    "react-hooks",
+    "custom-hooks",
+    "react",
+    "hooks"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^18.2.15",
