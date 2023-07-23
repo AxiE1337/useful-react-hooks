@@ -8,13 +8,14 @@
   - [useStorage](#usestorage)
   - [useIntersection](#useintersection)
   - [useFetch](#usefetch)
+  - [useCookie](#usecookie)
 - [License](#license)
 
 ## Installing
 
 Using npm:
 
-```
+```bash
 $ npm i useful-custom-react-hooks
 ```
 
@@ -141,7 +142,7 @@ export default App
 
 ### Syntax
 
-#### The useFetch takes two paramerets: url, opts
+#### The useFetch takes two parameters: url, opts
 
 #### url (required): The URL to fetch.
 
@@ -169,6 +170,48 @@ function App() {
     <main>
       <div>{JSON.stringify(data)}</div>
       <button onClick={() => refetch()}>Refetch</button>
+    </main>
+  )
+}
+
+export default App
+```
+
+## useCookie
+
+### The useCookie is a hook that simplifies the handling of browser cookies in your React applications.
+
+### Syntax
+
+#### The useCookie takes one parameter: key
+
+#### key (required): The name of the cookie.
+
+### Example
+
+```js
+import { useCookie } from 'useful-custom-react-hooks'
+
+function App() {
+  const [cookie, setCookie] = useCookie('my_cookie')
+
+  const handleSetCookie = () => {
+    // setCookie takes two parameters: value, opts
+    setCookie('cookie_value', {
+      expires: new Date(Date.now() + 3600000), // Expires in 1 hour
+    })
+  }
+
+  const handleDeleteCookie = () => {
+    // to delete cookie set it to null or set expires in opts to past date
+    setCookie(null)
+  }
+
+  return (
+    <main>
+      <button onClick={handleSetCookie}>Set cookie</button>
+      <button onClick={handleDeleteCookie}>Delete cookie</button>
+      <h1>{cookie}</h1>
     </main>
   )
 }
