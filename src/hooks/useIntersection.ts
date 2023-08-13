@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export const useIntersection = ({
   root,
@@ -8,6 +8,7 @@ export const useIntersection = ({
 }: IUseIntersection = {}) => {
   const [isIntersecting, setIntersecting] = useState<boolean>(false)
   const [isObserved, setIsObserved] = useState<boolean>(false)
+  const observer = useRef<IntersectionObserver | null>(null)
   const ref = useRef<HTMLDivElement | null>(null)
 
   const cd: IntersectionObserverCallback = (entries) => {
@@ -26,19 +27,21 @@ export const useIntersection = ({
     threshold: threshold,
   }
 
-  const observer = useMemo(() => new IntersectionObserver(cd, options), [])
+  useEffect(() => {
+    observer.current = new IntersectionObserver(cd, options)
+  }, [])
 
   useEffect(() => {
-    if (ref.current) {
+    if (ref.current && observer.current) {
       if (isObserved) {
-        return observer.unobserve(ref.current)
+        return observer.current.unobserve(ref.current)
       } else {
-        return observer.observe(ref.current)
+        return observer.current.observe(ref.current)
       }
     }
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
+      if (ref.current && observer.current) {
+        observer.current.unobserve(ref.current)
       }
     }
   }, [isObserved])
