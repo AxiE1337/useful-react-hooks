@@ -1,6 +1,6 @@
 {
   "name": "useful-custom-react-hooks",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A collection of useful custom React hooks to simplify common tasks and enhance your React applications.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,6 +23,11 @@
   "keywords": [
     "react-hooks",
     "custom-hooks",
+    "useCookie",
+    "useDebounceState",
+    "useStorage",
+    "useIntersection",
+    "useFetch",
     "react",
     "hooks"
   ],

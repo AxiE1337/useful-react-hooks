@@ -45,9 +45,9 @@ function App() {
     <main>
       <h1>{value}</h1>
       <input
-        type='text'
+        type="text"
         defaultValue={value}
-        placeholder='Type here'
+        placeholder="Type here"
         onChange={(e) => setValue(e.target.value)}
       />
     </main>
@@ -115,6 +115,8 @@ export default App
 
 ### Example
 
+#### Tailwind used in this example.
+
 ```js
 import { useIntersection } from 'useful-custom-react-hooks'
 
@@ -124,12 +126,12 @@ function App() {
   console.log(isIntersecting)
 
   return (
-    <main className='flex flex-col min-h-screen items-center justify-center'>
-      <div className='h-screen'></div>
+    <main className="flex flex-col min-h-screen items-center justify-center">
+      <div className="h-screen"></div>
       <div ref={ref}>
         {isIntersecting ? 'Intersecting' : 'Not intersecting'}
       </div>
-      <div className='h-screen'></div>
+      <div className="h-screen"></div>
     </main>
   )
 }
