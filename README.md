@@ -62,9 +62,11 @@ export default App
 
 ### Syntax
 
-#### useStorage takes one parameter: key
+#### useStorage takes two parameters: key and initialState
 
 #### key (required): The key to use for storing and retrieving data from localStorage.
+
+#### initialState (optional): The initial state
 
 ### Example
 
